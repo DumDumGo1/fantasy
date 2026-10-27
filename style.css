@@ -1,0 +1,451 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap');
+
+:root {
+    --wald: #23472f;
+    --gruen: #527a4d;
+    --hell: #f5f3e7;
+    --creme: #fffdf5;
+    --braun: #765139;
+    --gold: #d5b56d;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: #26382b;
+    background: var(--hell);
+    font-family: 'Nunito', sans-serif;
+}
+
+.kopf {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 18px 6%;
+    background: var(--creme);
+    border-bottom: 3px solid var(--gold);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--wald);
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.logo > span:first-child {
+    font-size: 43px;
+    cursor: pointer;
+}
+
+.logo small {
+    display: block;
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--wald);
+    font-weight: 800;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 5px;
+}
+
+nav a:hover {
+    border-color: var(--gold);
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+    padding: 70px 7%;
+    background: linear-gradient(130deg, #e3ead7, #f8f1dd);
+}
+
+.etikett {
+    color: var(--gruen);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+}
+
+h1 {
+    margin: 15px 0;
+    color: var(--wald);
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.08;
+    cursor: pointer;
+}
+
+.hero-text h2 {
+    color: var(--braun);
+    font-size: 25px;
+}
+
+.hero-text > p:not(.etikett, .mini-hinweis) {
+    max-width: 500px;
+    line-height: 1.9;
+}
+
+.knopf {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 14px 22px;
+    border: none;
+    border-radius: 12px;
+    background: var(--wald);
+    color: white;
+    font: inherit;
+    font-weight: 900;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.knopf:hover {
+    background: var(--braun);
+    transform: translateY(-3px);
+}
+
+.mini-hinweis {
+    color: var(--gruen);
+    font-size: 13px;
+    font-style: italic;
+}
+
+.hero-bild {
+    position: relative;
+}
+
+.hero-bild img {
+    display: block;
+    width: 100%;
+    height: 410px;
+    object-fit: cover;
+    border: 8px solid white;
+    border-radius: 45% 45% 18px 18px;
+    box-shadow: 0 15px 35px #34472b30;
+}
+
+.bild-sticker {
+    position: absolute;
+    right: -12px;
+    bottom: 25px;
+    padding: 15px;
+    background: #fff4cb;
+    border-radius: 50%;
+    font-weight: 900;
+    transform: rotate(9deg);
+}
+
+.abschnitt {
+    padding: 75px 7%;
+    text-align: center;
+}
+
+.abschnitt > h2,
+.herden-banner h2,
+.geheimnis h2 {
+    margin: 10px 0;
+    color: var(--wald);
+    font-size: clamp(30px, 4vw, 43px);
+}
+
+.einleitung {
+    margin-bottom: 35px;
+}
+
+.karten {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 35px;
+    text-align: left;
+}
+
+.karte {
+    padding: 27px;
+    background: var(--creme);
+    border: 1px solid #d9dfcb;
+    border-radius: 18px;
+    box-shadow: 0 7px 18px #273d2510;
+    transition: transform 0.2s;
+}
+
+.karte:hover {
+    transform: translateY(-5px);
+}
+
+.karte h3 {
+    color: var(--wald);
+}
+
+.karte p {
+    line-height: 1.7;
+}
+
+.symbol {
+    font-size: 35px;
+}
+
+.herden-banner {
+    padding: 65px 7%;
+    background: #dfe8d3;
+    text-align: center;
+}
+
+.kuh-reihe {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    margin: 30px 0;
+}
+
+.kuh {
+    border: 3px solid #fffdf5;
+    border-radius: 25px;
+    background: #f7f2e4;
+    font-size: 65px;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.25s;
+}
+
+.kuh:hover {
+    transform: rotate(-7deg) scale(1.1);
+}
+
+#kuh-nachricht {
+    min-height: 30px;
+    color: var(--wald);
+    font-weight: 900;
+}
+
+.funfact {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    max-width: 800px;
+    margin: 15px auto;
+    padding: 15px 22px;
+    background: var(--creme);
+    border-radius: 14px;
+    text-align: left;
+}
+
+.funfact span {
+    color: var(--gruen);
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.funfact p {
+    line-height: 1.7;
+}
+
+.geheimnis {
+    padding: 70px 7%;
+    background: #263d2b;
+    color: #f9f3dd;
+}
+
+.geheimnis-inhalt {
+    max-width: 760px;
+    margin: auto;
+}
+
+.geheimnis h2 {
+    color: #f8e8b8;
+}
+
+.geheimnis .etikett {
+    color: #d7c184;
+}
+
+.geheimnis li {
+    margin: 13px 0;
+    line-height: 1.7;
+}
+
+.geheimnis ul {
+    padding-left: 20px;
+}
+
+footer {
+    padding: 35px 6%;
+    background: #172a1c;
+    color: white;
+    text-align: center;
+}
+
+#nacht-knopf {
+    padding: 10px 16px;
+    border: 1px solid var(--gold);
+    border-radius: 10px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+#meldung {
+    position: fixed;
+    z-index: 10000;
+    left: 50%;
+    bottom: 25px;
+    width: max-content;
+    max-width: 90%;
+    padding: 16px 22px;
+    border: 2px solid var(--gold);
+    border-radius: 15px;
+    background: #203b29;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+    box-shadow: 0 8px 30px #0003;
+    opacity: 0;
+    transform: translate(-50%, 30px);
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+#meldung.zeigen {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+#magie {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: #152d21eF;
+    color: white;
+    text-align: center;
+    pointer-events: none;
+}
+
+#magie.aktiv {
+    display: flex;
+    animation: magie-ein 0.4s ease;
+}
+
+#magie .magie-bild {
+    font-size: clamp(45px, 10vw, 100px);
+    animation: schweben 1s ease-in-out infinite alternate;
+}
+
+#magie h2 {
+    color: #ffe6a0;
+    font-size: clamp(28px, 5vw, 50px);
+}
+
+body.nacht {
+    --hell: #14251a;
+    --creme: #20372a;
+    --wald: #dceacb;
+    --gruen: #b7d79d;
+    --braun: #f0d2a4;
+    color: #f4f1e7;
+}
+
+body.nacht .hero {
+    background: linear-gradient(130deg, #263e30, #344435);
+}
+
+body.nacht .herden-banner {
+    background: #2a402f;
+}
+
+body.nacht .karte,
+body.nacht .funfact {
+    color: #f4f1e7;
+    border-color: #425743;
+}
+
+@keyframes magie-ein {
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes schweben {
+    from { transform: translateY(-8px) rotate(-5deg); }
+    to { transform: translateY(8px) rotate(5deg); }
+}
+
+@media (max-width: 800px) {
+    .kopf {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 45px 6%;
+    }
+
+    .hero-bild img {
+        height: 300px;
+    }
+
+    .karten {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .karten {
+        grid-template-columns: 1fr;
+    }
+
+    .abschnitt {
+        padding: 50px 6%;
+    }
+
+    .kuh {
+        font-size: 50px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

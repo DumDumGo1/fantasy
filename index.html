@@ -1,11 +1,153 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Highland Dreams 🐮</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    
+
+<header class="kopf">
+    <a href="#start" class="logo">
+        <span id="logo-kuh">🐮</span>
+        <span>Highland Dreams<small>Schottische Hochlandrinder</small></span>
+    </a>
+
+    <nav>
+        <a href="#start">Startseite</a>
+        <a href="#steckbrief">Steckbrief</a>
+        <a href="#herde">Die Herde</a>
+        <a href="#funfacts">Funfacts</a>
+        <a href="#easter">Easter Eggs ✨</a>
+    </nav>
+</header>
+
+<main>
+    <section class="hero" id="start">
+        <div class="hero-text">
+            <p class="etikett">🏴󠁧󠁢󠁳󠁣󠁴󠁿 WILLKOMMEN IN SCHOTTLAND</p>
+            <h1 id="haupttitel">Schottische<br>Hochlandrinder</h1>
+            <h2>Wild. Zottelig. Wunderbar.</h2>
+            <p>
+                Entdecke die flauschigen Stars der schottischen Highlands.
+                Hier warten spannende Fakten, eine neugierige Herde
+                und jede Menge geheime Überraschungen!
+            </p>
+            <a class="knopf" href="#steckbrief">🐮 Entdecke die Rinder ↓</a>
+            <p class="mini-hinweis">Pssst ... hier sind geheime Dinge versteckt!</p>
+        </div>
+
+        <div class="hero-bild">
+            <img
+                src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=1100&q=85"
+                alt="Rinder auf einer grünen Weide">
+            <span class="bild-sticker">Muuuh! ♡</span>
+        </div>
+    </section>
+
+    <section class="abschnitt" id="steckbrief">
+        <p class="etikett">DIE WICHTIGSTEN FAKTEN</p>
+        <h2>Der Kuh-Check 🐮</h2>
+        <p class="einleitung">Lerne die zotteligen Hochlandprofis kennen.</p>
+
+        <div class="karten">
+            <article class="karte">
+                <span class="symbol">📍</span>
+                <h3>Herkunft</h3>
+                <p>Die schottischen Highlands und die westlichen Inseln Schottlands.</p>
+            </article>
+            <article class="karte">
+                <span class="symbol">🧥</span>
+                <h3>Super-Fell</h3>
+                <p>Ein langes, dichtes Fell schützt sie vor Wind, Kälte und Regen.</p>
+            </article>
+            <article class="karte">
+                <span class="symbol">🌱</span>
+                <h3>Lieblingsessen</h3>
+                <p>Gräser, Kräuter und andere Pflanzen, die sie auf der Weide finden.</p>
+            </article>
+            <article class="karte">
+                <span class="symbol">🦌</span>
+                <h3>Beeindruckende Hörner</h3>
+                <p>Beide Geschlechter tragen Hörner – Form und Grösse unterscheiden sich.</p>
+            </article>
+            <article class="karte">
+                <span class="symbol">🎨</span>
+                <h3>Farben</h3>
+                <p>Es gibt rote, gelbe, schwarze, gestromte und weitere Fellfarben.</p>
+            </article>
+            <article class="karte">
+                <span class="symbol">🌦️</span>
+                <h3>Robuste Tiere</h3>
+                <p>Sie sind gut an raue Wetterbedingungen angepasst.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="herden-banner" id="herde">
+        <div>
+            <p class="etikett">LIEBLINGE AUF DER WEIDE</p>
+            <h2>Die zottelige Gang 🐂</h2>
+            <p>Jedes Rind hat seinen eigenen Charakter. Klick auf die Kuh für eine Überraschung!</p>
+        </div>
+
+        <div class="kuh-reihe">
+            <button class="kuh" data-kuh="1" aria-label="Rind Nummer eins">🐮</button>
+            <button class="kuh" data-kuh="2" aria-label="Rind Nummer zwei">🐂</button>
+            <button class="kuh" data-kuh="3" aria-label="Rind Nummer drei">🐮</button>
+        </div>
+        <p id="kuh-nachricht" aria-live="polite">Wer versteckt wohl das Geheimnis?</p>
+    </section>
+
+    <section class="abschnitt" id="funfacts">
+        <p class="etikett">WUSSTEST DU SCHON?</p>
+        <h2>Flauschige Funfacts 🤓</h2>
+
+        <div class="funfact">
+            <span>01</span>
+            <p>Ihr langes Deckhaar kann Wasser abweisen. Darunter hilft eine weichere Unterwolle beim Warmhalten.</p>
+        </div>
+        <div class="funfact">
+            <span>02</span>
+            <p>Hochlandrinder suchen auf Weiden auch nach Pflanzen, die andere Rinder vielleicht stehen lassen.</p>
+        </div>
+        <div class="funfact">
+            <span>03</span>
+            <p>Ihre Stirnfransen sehen lustig aus – aber sie sind Teil ihres charakteristischen Fells.</p>
+        </div>
+        <div class="funfact">
+            <span>04</span>
+            <p>Obwohl sie kräftig aussehen, können sie sich auf unebenem Gelände erstaunlich gut bewegen.</p>
+        </div>
+    </section>
+
+    <section class="geheimnis" id="easter">
+        <div class="geheimnis-inhalt">
+            <p class="etikett">NUR FÜR ECHTE KUH-DETEKTIVE</p>
+            <h2>Die geheime Muh-Zentrale 🔎</h2>
+            <p>Hier stehen ein paar Hinweise. Die wirklich geheimen Dinge musst du selbst entdecken!</p>
+            <ul>
+                <li>✨ Klicke fünfmal auf den grossen Titel.</li>
+                <li>🐮 Klicke zehnmal auf das Logo.</li>
+                <li>🌿 Klicke dreimal auf dieselbe Kuh.</li>
+                <li>⌨️ Tippe das geheime Wort <strong>MUH</strong> auf deiner Tastatur.</li>
+            </ul>
+            <button class="knopf" id="muh-knopf">Sag MUUUH! 🔊</button>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>🐮 Mit viel Liebe zu den Hochlandrindern gemacht.</p>
+    <p>Highland Dreams · Die Wiese voller Überraschungen 🌿</p>
+    <button id="nacht-knopf">🌙 Nachtmodus</button>
+</footer>
+
+<div id="meldung" role="status" aria-live="polite"></div>
+<div id="magie" aria-hidden="true"></div>
+
 </body>
 </html>
