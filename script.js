@@ -1,185 +1,202 @@
+```javascript
+// ====================================
+// 1. ZUFÄLLIGE PANDA-FAKTEN
+// ====================================
 
-document.addEventListener("DOMContentLoaded", function () {
-    const titel = document.getElementById("haupttitel");
-    const logo = document.getElementById("logo-kuh");
-    const kuehe = document.querySelectorAll(".kuh");
-    const meldung = document.getElementById("meldung");
-    const magie = document.getElementById("magie");
+const facts = [
+    "🐾 Rote Pandas benutzen ihren buschigen Schwanz zum Balancieren und Wärmen.",
+    "🌙 Sie sind vor allem in der Dämmerung und nachts aktiv.",
+    "🎋 Bambus ist ein wichtiger Bestandteil ihrer Nahrung.",
+    "🌳 Rote Pandas sind ausgezeichnete Kletterer.",
+    "❄️ Ihr dichtes Fell hilft ihnen, in kühlen Bergwäldern zu leben.",
+    "🔬 Ihr wissenschaftlicher Name lautet Ailurus fulgens.",
+    "🦊 Trotz ihres Aussehens sind Rote Pandas keine Füchse.",
+    "🌏 Sie leben in Teilen des Himalaya und angrenzenden Gebieten Asiens."
+];
 
-    let titelKlicks = 0;
-    let logoKlicks = 0;
-    let muhText = "";
-    let timerMeldung;
-    let timerMagie;
-    let regenbogenTimer;
-    const kuhKlicks = {};
+const factButton = document.getElementById("factButton");
+const randomFact = document.getElementById("randomFact");
 
-    function zeigeMeldung(text) {
-        meldung.textContent = text;
-        meldung.classList.add("zeigen");
-        clearTimeout(timerMeldung);
+factButton.addEventListener("click", function () {
 
-        timerMeldung = setTimeout(function () {
-            meldung.classList.remove("zeigen");
-        }, 3000);
-    }
+    const randomIndex = Math.floor(Math.random() * facts.length);
 
-    function zeigeMagie(emoji, ueberschrift, text) {
-        clearTimeout(timerMagie);
-        magie.innerHTML = `
-            <div class="magie-bild">${emoji}</div>
-            <h2>${ueberschrift}</h2>
-            <p>${text}</p>
-        `;
-        magie.classList.add("aktiv");
+    randomFact.textContent = facts[randomIndex];
 
-        timerMagie = setTimeout(function () {
-            magie.classList.remove("aktiv");
-        }, 5000);
-    }
-
-    // Easter Egg 1: Fünf Klicks auf den Haupttitel
-    titel.addEventListener("click", function () {
-        titelKlicks++;
-
-        if (titelKlicks >= 5) {
-            titelKlicks = 0;
-            zeigeMagie(
-                "🌈 🐮 🌈",
-                "DER MAGISCHE KUH-REGENBOGEN!",
-                "Du hast das erste Geheimnis entdeckt!"
-            );
+    randomFact.animate(
+        [
+            { opacity: 0, transform: "translateY(8px)" },
+            { opacity: 1, transform: "translateY(0)" }
+        ],
+        {
+            duration: 400,
+            easing: "ease-out"
         }
-    });
+    );
 
-    // Easter Egg 2: Zehn Klicks auf das Logo
-    logo.addEventListener("click", function () {
-        logoKlicks++;
-
-        if (logoKlicks >= 10) {
-            logoKlicks = 0;
-            zeigeMagie(
-                "👑🐮👑",
-                "KÖNIGLICHE HOCHLANDKUH!",
-                "Du bist jetzt Ehrenmitglied der Muh-Königsfamilie."
-            );
-        }
-    });
-
-    // Easter Egg 3: Jede Kuh hat ihr eigenes Geheimnis
-    kuehe.forEach(function (kuh) {
-        const nummer = kuh.dataset.kuh;
-        kuhKlicks[nummer] = 0;
-
-        kuh.addEventListener("click", function () {
-            kuhKlicks[nummer]++;
-
-            if (kuhKlicks[nummer] >= 3) {
-                kuhKlicks[nummer] = 0;
-
-                const geheimnisse = {
-                    "1": "🐮 Geheimnis: Diese Kuh ist die Chefin der Herde!",
-                    "2": "🐂 Geheimnis: Dieser Bulle träumt von einer Karriere als Rockstar!",
-                    "3": "🌸 Geheimnis: Diese Kuh liebt Blumen mehr als Gras!"
-                };
-
-                document.getElementById("kuh-nachricht").textContent =
-                    geheimnisse[nummer];
-            } else {
-                document.getElementById("kuh-nachricht").textContent =
-                    "Muh! Noch " + (3 - kuhKlicks[nummer]) +
-                    " Klick(s) bis zum Geheimnis ...";
-            }
-        });
-    });
-
-    // Easter Egg 4: Das geheime Tastaturwort MUH
-    document.addEventListener("keydown", function (event) {
-        if (event.ctrlKey || event.altKey || event.metaKey) return;
-
-        if (event.key.length === 1) {
-            muhText = (muhText + event.key.toLowerCase()).slice(-3);
-
-            if (muhText === "muh") {
-                muhText = "";
-                zeigeMagie(
-                    "🐮💨🐮",
-                    "MUH-ULTRA-MODUS!",
-                    "Die Kuh sagt: Du hast das geheime Wort gefunden!"
-                );
-            }
-        }
-    });
-
-    // Easter Egg 5: Der MUH-Knopf
-    document.getElementById("muh-knopf").addEventListener("click", function () {
-        zeigeMeldung("M̲U̲U̲U̲H̲! 🐮 Die ganze Herde antwortet: MÖÖÖH!");
-        document.body.animate(
-            [
-                { transform: "translateX(0)" },
-                { transform: "translateX(-4px)" },
-                { transform: "translateX(4px)" },
-                { transform: "translateX(0)" }
-            ],
-            { duration: 350 }
-        );
-    });
-
-    // Easter Egg 6: Nachtmodus
-    document.getElementById("nacht-knopf").addEventListener("click", function () {
-        document.body.classList.toggle("nacht");
-
-        if (document.body.classList.contains("nacht")) {
-            this.textContent = "☀️ Tagmodus";
-            zeigeMeldung("🌙 Die Highlands schlafen jetzt ... gute Nacht, Kühe!");
-        } else {
-            this.textContent = "🌙 Nachtmodus";
-            zeigeMeldung("☀️ Die Sonne geht über der Weide auf!");
-        }
-    });
-
-    // Easter Egg 7: Doppelklick auf eine Kuh
-    kuehe.forEach(function (kuh) {
-        kuh.addEventListener("dblclick", function () {
-            zeigeMagie(
-                "🛸🐮",
-                "KUH-ABENTEUER!",
-                "Eine Kuh wurde gerade von Aliens eingeladen. Muhahaha!"
-            );
-        });
-    });
-
-    // Easter Egg 8: Alle Kühe gleichzeitig anklicken
-    let kuhReiheKlicks = 0;
-
-    kuehe.forEach(function (kuh) {
-        kuh.addEventListener("click", function () {
-            kuhReiheKlicks++;
-
-            if (kuhReiheKlicks >= 12) {
-                kuhReiheKlicks = 0;
-                zeigeMagie(
-                    "🐮🐮🐮✨",
-                    "DIE SUPERHERDE!",
-                    "Du hast die geheime Superherde freigeschaltet!"
-                );
-            }
-        });
-    });
-
-    // Easter Egg 9: Ein Klick auf den Hinweistext
-    document.querySelector(".mini-hinweis").addEventListener("click", function () {
-        zeigeMeldung("🤫 Der beste Detektiv findet auch die kleinsten Geheimnisse!");
-    });
-
-    document.querySelector(".mini-hinweis").style.cursor = "pointer";
-
-    // Easter Egg 10: Das Logo reagiert auf Doppelklick
-    logo.addEventListener("dblclick", function () {
-        zeigeMagie(
-            "🧙🐮✨",
-            "DER KUH-ZAUBERER!",
-            "Du hast den geheimsten Zauber der Highlands gefunden."
-        );
-    });
 });
+
+
+// ====================================
+// 2. GEHEIME ÜBERRASCHUNG
+// ====================================
+
+const secretButton = document.getElementById("secretButton");
+const secretMessage = document.getElementById("secretMessage");
+
+let secretClicks = 0;
+
+secretButton.addEventListener("click", function () {
+
+    secretClicks++;
+
+    if (secretClicks === 1) {
+
+        secretMessage.textContent =
+            "🌿 Pssst ... irgendwo auf dieser Website wartet noch ein Geheimnis!";
+
+    } else if (secretClicks === 2) {
+
+        secretMessage.textContent =
+            "🐾 Du bist auf einer geheimen Panda-Mission!";
+
+    } else {
+
+        secretMessage.textContent =
+            "🎉 PANDA-MODUS AKTIVIERT! Du bist offiziell ein Wald-Entdecker!";
+
+        document.body.classList.toggle("panda-mode");
+
+        secretClicks = 0;
+    }
+
+});
+
+
+// ====================================
+// 3. GEHEIMER PANDA-REGEN
+// ====================================
+
+const magicPanda = document.getElementById("magicPanda");
+const pandaRain = document.getElementById("pandaRain");
+
+let rainActive = false;
+
+magicPanda.addEventListener("click", function () {
+
+    if (rainActive) {
+        return;
+    }
+
+    rainActive = true;
+
+    for (let i = 0; i < 35; i++) {
+
+        const panda = document.createElement("span");
+
+        panda.className = "falling-panda";
+
+        panda.textContent = ["🐼", "🐾", "🍃", "🎋"][
+            Math.floor(Math.random() * 4)
+        ];
+
+        panda.style.left = Math.random() * 100 + "vw";
+
+        panda.style.fontSize = (20 + Math.random() * 25) + "px";
+
+        panda.style.animationDuration = (2.5 + Math.random() * 3) + "s";
+
+        panda.style.animationDelay = (Math.random() * 1.5) + "s";
+
+        pandaRain.appendChild(panda);
+
+        panda.addEventListener("animationend", function () {
+            panda.remove();
+        });
+
+    }
+
+    setTimeout(function () {
+        rainActive = false;
+    }, 6000);
+
+});
+
+
+// ====================================
+// 4. NACH-OBEN-BUTTON
+// ====================================
+
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", function () {
+
+    if (window.scrollY > 400) {
+
+        backToTop.classList.add("visible");
+
+    } else {
+
+        backToTop.classList.remove("visible");
+
+    }
+
+});
+
+backToTop.addEventListener("click", function () {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
+
+
+// ====================================
+// 5. EXTRA EASTER EGG: GEHEIME TASTE
+// ====================================
+
+let pandaCode = "";
+
+const secretCode = "panda";
+
+document.addEventListener("keydown", function (event) {
+
+    // Nicht auslösen, während man in ein Eingabefeld schreibt.
+    if (
+        event.target.tagName === "INPUT" ||
+        event.target.tagName === "TEXTAREA"
+    ) {
+        return;
+    }
+
+    pandaCode += event.key.toLowerCase();
+
+    pandaCode = pandaCode.slice(-secretCode.length);
+
+    if (pandaCode === secretCode) {
+
+        document.body.classList.toggle("panda-mode");
+
+        alert("🐼✨ Du hast das geheime Panda-Code-Easter-Egg gefunden!");
+
+        pandaCode = "";
+    }
+
+});
+
+
+// ====================================
+// 6. KLEINE BEGRÜSSUNG
+// ====================================
+
+console.log(
+    "%c🐼 Willkommen in Red Panda World!",
+    "color: #d87536; font-size: 20px; font-weight: bold;"
+);
+
+console.log(
+    "Geheimtipp: Tippe das Wort panda auf deiner Tastatur!"
+);
+```

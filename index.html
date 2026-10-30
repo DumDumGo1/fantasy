@@ -1,153 +1,285 @@
-
+```html
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Highland Dreams 🐮</title>
+
+    <title>Red Panda World 🐾</title>
+
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
 
-<header class="kopf">
-    <a href="#start" class="logo">
-        <span id="logo-kuh">🐮</span>
-        <span>Highland Dreams<small>Schottische Hochlandrinder</small></span>
-    </a>
+    <div class="floating-leaves" aria-hidden="true">
+        🍃　🌿　🍂　🍃　🌱
+    </div>
 
-    <nav>
-        <a href="#start">Startseite</a>
-        <a href="#steckbrief">Steckbrief</a>
-        <a href="#herde">Die Herde</a>
-        <a href="#funfacts">Funfacts</a>
-        <a href="#easter">Easter Eggs ✨</a>
-    </nav>
-</header>
+    <header class="hero" id="home">
 
-<main>
-    <section class="hero" id="start">
-        <div class="hero-text">
-            <p class="etikett">🏴󠁧󠁢󠁳󠁣󠁴󠁿 WILLKOMMEN IN SCHOTTLAND</p>
-            <h1 id="haupttitel">Schottische<br>Hochlandrinder</h1>
-            <h2>Wild. Zottelig. Wunderbar.</h2>
-            <p>
-                Entdecke die flauschigen Stars der schottischen Highlands.
-                Hier warten spannende Fakten, eine neugierige Herde
-                und jede Menge geheime Überraschungen!
+        <nav class="navigation">
+            <a href="#home" class="logo">🦊 Red Panda World</a>
+
+            <div class="nav-links">
+                <a href="#steckbrief">Steckbrief</a>
+                <a href="#lebensraum">Lebensraum</a>
+                <a href="#galerie">Galerie</a>
+                <a href="#schutz">Artenschutz</a>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+            <p class="eyebrow">WELCOME TO THE WILD 🌿</p>
+
+            <h1>Rote Pandas</h1>
+
+            <p class="hero-subtitle">
+                Klein, flauschig und voller Geheimnisse.
+                Willkommen in der faszinierenden Welt der Roten Pandas!
             </p>
-            <a class="knopf" href="#steckbrief">🐮 Entdecke die Rinder ↓</a>
-            <p class="mini-hinweis">Pssst ... hier sind geheime Dinge versteckt!</p>
+
+            <a href="#steckbrief" class="main-button">
+                Entdecke ihre Welt ↓
+            </a>
         </div>
 
-        <div class="hero-bild">
-            <img
-                src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=1100&q=85"
-                alt="Rinder auf einer grünen Weide">
-            <span class="bild-sticker">Muuuh! ♡</span>
-        </div>
-    </section>
+        <div class="scroll-hint">SCROLL TO EXPLORE ↓</div>
 
-    <section class="abschnitt" id="steckbrief">
-        <p class="etikett">DIE WICHTIGSTEN FAKTEN</p>
-        <h2>Der Kuh-Check 🐮</h2>
-        <p class="einleitung">Lerne die zotteligen Hochlandprofis kennen.</p>
+    </header>
 
-        <div class="karten">
-            <article class="karte">
-                <span class="symbol">📍</span>
-                <h3>Herkunft</h3>
-                <p>Die schottischen Highlands und die westlichen Inseln Schottlands.</p>
-            </article>
-            <article class="karte">
-                <span class="symbol">🧥</span>
-                <h3>Super-Fell</h3>
-                <p>Ein langes, dichtes Fell schützt sie vor Wind, Kälte und Regen.</p>
-            </article>
-            <article class="karte">
-                <span class="symbol">🌱</span>
-                <h3>Lieblingsessen</h3>
-                <p>Gräser, Kräuter und andere Pflanzen, die sie auf der Weide finden.</p>
-            </article>
-            <article class="karte">
-                <span class="symbol">🦌</span>
-                <h3>Beeindruckende Hörner</h3>
-                <p>Beide Geschlechter tragen Hörner – Form und Grösse unterscheiden sich.</p>
-            </article>
-            <article class="karte">
-                <span class="symbol">🎨</span>
-                <h3>Farben</h3>
-                <p>Es gibt rote, gelbe, schwarze, gestromte und weitere Fellfarben.</p>
-            </article>
-            <article class="karte">
-                <span class="symbol">🌦️</span>
-                <h3>Robuste Tiere</h3>
-                <p>Sie sind gut an raue Wetterbedingungen angepasst.</p>
-            </article>
-        </div>
-    </section>
 
-    <section class="herden-banner" id="herde">
-        <div>
-            <p class="etikett">LIEBLINGE AUF DER WEIDE</p>
-            <h2>Die zottelige Gang 🐂</h2>
-            <p>Jedes Rind hat seinen eigenen Charakter. Klick auf die Kuh für eine Überraschung!</p>
+    <main>
+
+        <!-- STECKBRIEF -->
+
+        <section class="section" id="steckbrief">
+
+            <div class="section-heading">
+                <p class="eyebrow">MEET THE RED PANDA</p>
+                <h2>Der kleine Waldakrobat 🐾</h2>
+                <p>Wie gut kennst du diese faszinierenden Tiere?</p>
+            </div>
+
+            <div class="fact-grid">
+
+                <article class="fact-card">
+                    <span class="fact-icon">🔬</span>
+                    <h3>Wissenschaftlicher Name</h3>
+                    <p><i>Ailurus fulgens</i></p>
+                </article>
+
+                <article class="fact-card">
+                    <span class="fact-icon">📏</span>
+                    <h3>Körperlänge</h3>
+                    <p>Etwa 50–65 cm, ohne Schwanz.</p>
+                </article>
+
+                <article class="fact-card">
+                    <span class="fact-icon">⚖️</span>
+                    <h3>Gewicht</h3>
+                    <p>Ungefähr 3–6 kg.</p>
+                </article>
+
+                <article class="fact-card">
+                    <span class="fact-icon">🎂</span>
+                    <h3>Lebenserwartung</h3>
+                    <p>In menschlicher Obhut oft bis etwa 15 Jahre.</p>
+                </article>
+
+                <article class="fact-card">
+                    <span class="fact-icon">🎋</span>
+                    <h3>Lieblingsessen</h3>
+                    <p>Bambus, aber auch Früchte und andere Pflanzenteile.</p>
+                </article>
+
+                <article class="fact-card">
+                    <span class="fact-icon">🌏</span>
+                    <h3>Herkunft</h3>
+                    <p>Die Bergwälder des Himalaya und angrenzende Regionen Asiens.</p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- LEBENSRAUM -->
+
+        <section class="section habitat-section" id="lebensraum">
+
+            <div class="habitat-image">
+                <img
+                    src="https://images3.alphacoders.com/105/thumb-1920-1055504.jpg"
+                    alt="Roter Panda klettert an einem Baum"
+                    loading="lazy">
+            </div>
+
+            <div class="habitat-text">
+
+                <p class="eyebrow">HOME IN THE MOUNTAINS</p>
+
+                <h2>Ein Leben hoch oben in den Bäumen 🌳</h2>
+
+                <p>
+                    Rote Pandas leben in kühlen, feuchten Bergwäldern
+                    mit vielen Bäumen und Bambus. Sie sind ausgezeichnete
+                    Kletterer und verbringen viel Zeit in den Bäumen.
+                </p>
+
+                <p>
+                    Ihr buschiger Schwanz hilft ihnen beim Balancieren.
+                    Bei kaltem Wetter können sie ihn ausserdem wie eine
+                    warme Decke um ihren Körper legen.
+                </p>
+
+                <button class="fun-button" id="factButton">
+                    ✨ Überrasch mich!
+                </button>
+
+                <p id="randomFact" class="random-fact" aria-live="polite">
+                    Hier wartet eine Überraschung auf dich ...
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- BILDERGALERIE -->
+
+        <section class="section" id="galerie">
+
+            <div class="section-heading">
+                <p class="eyebrow">LITTLE FOREST STARS</p>
+                <h2>Die flauschige Galerie 📸</h2>
+                <p>Ein paar besondere Momente aus dem Leben der Roten Pandas.</p>
+            </div>
+
+            <div class="gallery">
+
+                <figure class="gallery-item">
+                    <img
+                        src="https://himalayangatewaytrek.com/wp-content/uploads/2025/12/red-panda.jpeg"
+                        alt="Roter Panda auf einem moosigen Ast"
+                        loading="lazy">
+                    <figcaption>🌿 Der neugierige Entdecker</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img
+                        src="https://www.pbs.org/wnet/nature/files/2023/02/pexels-flickr-146069-scaled-e1677618315322-2048x1152.jpg"
+                        alt="Roter Panda schläft auf einem Ast"
+                        loading="lazy">
+                    <figcaption>💤 Zeit für ein Nickerchen</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img
+                        src="https://res.cloudinary.com/roundglass/image/upload/v1534948654/roundglass/sustain/Cover_Featured_redpanda_iyh4id.jpg"
+                        alt="Roter Panda im grünen Wald"
+                        loading="lazy">
+                    <figcaption>🍃 Im grünen Dschungel</figcaption>
+                </figure>
+
+            </div>
+
+            <p class="gallery-note">
+                Hinweis: Die Fotos werden von externen Webseiten geladen.
+            </p>
+
+        </section>
+
+
+        <!-- EASTER EGGS -->
+
+        <section class="secret-section">
+
+            <div class="secret-box">
+
+                <p class="eyebrow">PSSST ... 🤫</p>
+
+                <h2>Ein Geheimnis wartet auf dich!</h2>
+
+                <p>
+                    Manche Geheimnisse verstecken sich direkt vor deiner Nase.
+                    Bist du bereit, sie zu entdecken?
+                </p>
+
+                <button class="secret-button" id="secretButton">
+                    🐾 Geheime Überraschung
+                </button>
+
+                <p id="secretMessage" class="secret-message" aria-live="polite"></p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ARTENSCHUTZ -->
+
+        <section class="section protection-section" id="schutz">
+
+            <div class="section-heading">
+                <p class="eyebrow">PROTECT OUR PLANET</p>
+                <h2>Helfen wir den Roten Pandas! 🌍</h2>
+            </div>
+
+            <div class="protection-content">
+
+                <div class="protection-icon">🌱</div>
+
+                <p>
+                    Rote Pandas sind gefährdet. Der Verlust ihres Lebensraums,
+                    die Zerstörung der Wälder und andere menschliche Einflüsse
+                    bedrohen ihr Überleben.
+                </p>
+
+                <p>
+                    Geschützte Wälder, verantwortungsvoller Umgang mit der
+                    Natur und Artenschutzprojekte helfen, ihre Zukunft zu sichern.
+                </p>
+
+                <a
+                    class="main-button"
+                    href="https://redpandanetwork.org/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Mehr über den Artenschutz erfahren ↗
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-panda" id="magicPanda" title="Klick mich!">
+            🐼
         </div>
 
-        <div class="kuh-reihe">
-            <button class="kuh" data-kuh="1" aria-label="Rind Nummer eins">🐮</button>
-            <button class="kuh" data-kuh="2" aria-label="Rind Nummer zwei">🐂</button>
-            <button class="kuh" data-kuh="3" aria-label="Rind Nummer drei">🐮</button>
-        </div>
-        <p id="kuh-nachricht" aria-live="polite">Wer versteckt wohl das Geheimnis?</p>
-    </section>
+        <p>Made with 🍃 and lots of panda love.</p>
 
-    <section class="abschnitt" id="funfacts">
-        <p class="etikett">WUSSTEST DU SCHON?</p>
-        <h2>Flauschige Funfacts 🤓</h2>
+        <p>Red Panda World © 2026</p>
 
-        <div class="funfact">
-            <span>01</span>
-            <p>Ihr langes Deckhaar kann Wasser abweisen. Darunter hilft eine weichere Unterwolle beim Warmhalten.</p>
-        </div>
-        <div class="funfact">
-            <span>02</span>
-            <p>Hochlandrinder suchen auf Weiden auch nach Pflanzen, die andere Rinder vielleicht stehen lassen.</p>
-        </div>
-        <div class="funfact">
-            <span>03</span>
-            <p>Ihre Stirnfransen sehen lustig aus – aber sie sind Teil ihres charakteristischen Fells.</p>
-        </div>
-        <div class="funfact">
-            <span>04</span>
-            <p>Obwohl sie kräftig aussehen, können sie sich auf unebenem Gelände erstaunlich gut bewegen.</p>
-        </div>
-    </section>
+        <p class="footer-hint">
+            Pssst ... probiere einmal, den Panda unten anzuklicken! 👀
+        </p>
 
-    <section class="geheimnis" id="easter">
-        <div class="geheimnis-inhalt">
-            <p class="etikett">NUR FÜR ECHTE KUH-DETEKTIVE</p>
-            <h2>Die geheime Muh-Zentrale 🔎</h2>
-            <p>Hier stehen ein paar Hinweise. Die wirklich geheimen Dinge musst du selbst entdecken!</p>
-            <ul>
-                <li>✨ Klicke fünfmal auf den grossen Titel.</li>
-                <li>🐮 Klicke zehnmal auf das Logo.</li>
-                <li>🌿 Klicke dreimal auf dieselbe Kuh.</li>
-                <li>⌨️ Tippe das geheime Wort <strong>MUH</strong> auf deiner Tastatur.</li>
-            </ul>
-            <button class="knopf" id="muh-knopf">Sag MUUUH! 🔊</button>
-        </div>
-    </section>
-</main>
+    </footer>
 
-<footer>
-    <p>🐮 Mit viel Liebe zu den Hochlandrindern gemacht.</p>
-    <p>Highland Dreams · Die Wiese voller Überraschungen 🌿</p>
-    <button id="nacht-knopf">🌙 Nachtmodus</button>
-</footer>
 
-<div id="meldung" role="status" aria-live="polite"></div>
-<div id="magie" aria-hidden="true"></div>
+    <div id="pandaRain" class="panda-rain" aria-hidden="true"></div>
+
+    <button id="backToTop" class="back-to-top" aria-label="Nach oben">
+        ↑
+    </button>
 
 </body>
 </html>
+```

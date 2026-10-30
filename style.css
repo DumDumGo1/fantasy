@@ -1,451 +1,636 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap');
-
-:root {
-    --wald: #23472f;
-    --gruen: #527a4d;
-    --hell: #f5f3e7;
-    --creme: #fffdf5;
-    --braun: #765139;
-    --gold: #d5b56d;
-}
+```css
+/* =========================
+   GRUNDEINSTELLUNGEN
+========================= */
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     scroll-behavior: smooth;
 }
 
-body {
-    margin: 0;
-    color: #26382b;
-    background: var(--hell);
-    font-family: 'Nunito', sans-serif;
+:root {
+    --forest: #173c2d;
+    --deep-forest: #10271e;
+    --green: #426b48;
+    --light-green: #e9f0df;
+    --orange: #d87536;
+    --cream: #fff8ed;
+    --text: #26372c;
 }
 
-.kopf {
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+
+/* =========================
+   TITELBEREICH
+========================= */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 32, 22, 0.88),
+            rgba(10, 32, 22, 0.35)
+        ),
+        url("https://justnature.travel/_astro/Untitled-design-2.CCpmVxkt.webp");
+
+    background-size: cover;
+    background-position: center;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+}
+
+.navigation {
+    width: 100%;
+    padding: 22px 7%;
+    display: flex;
     justify-content: space-between;
-    gap: 25px;
-    padding: 18px 6%;
-    background: var(--creme);
-    border-bottom: 3px solid var(--gold);
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(5px);
 }
 
 .logo {
+    font-size: 1.35rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-links {
     display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--wald);
-    text-decoration: none;
-    font-family: 'Playfair Display', serif;
-    font-size: 23px;
-    font-weight: 800;
-}
-
-.logo > span:first-child {
-    font-size: 43px;
-    cursor: pointer;
-}
-
-.logo small {
-    display: block;
-    font-family: 'Nunito', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-}
-
-nav {
-    display: flex;
+    gap: 24px;
     flex-wrap: wrap;
-    gap: 20px;
 }
 
-nav a {
-    color: var(--wald);
-    font-weight: 800;
-    text-decoration: none;
-    border-bottom: 2px solid transparent;
-    padding-bottom: 5px;
-}
-
-nav a:hover {
-    border-color: var(--gold);
-}
-
-.hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 45px;
-    align-items: center;
-    padding: 70px 7%;
-    background: linear-gradient(130deg, #e3ead7, #f8f1dd);
-}
-
-.etikett {
-    color: var(--gruen);
-    font-size: 12px;
-    font-weight: 900;
-    letter-spacing: 2px;
-}
-
-h1, h2 {
-    font-family: 'Playfair Display', serif;
-}
-
-h1 {
-    margin: 15px 0;
-    color: var(--wald);
-    font-size: clamp(38px, 5vw, 65px);
-    line-height: 1.08;
-    cursor: pointer;
-}
-
-.hero-text h2 {
-    color: var(--braun);
-    font-size: 25px;
-}
-
-.hero-text > p:not(.etikett, .mini-hinweis) {
-    max-width: 500px;
-    line-height: 1.9;
-}
-
-.knopf {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 14px 22px;
-    border: none;
-    border-radius: 12px;
-    background: var(--wald);
+.nav-links a {
     color: white;
-    font: inherit;
-    font-weight: 900;
-    text-decoration: none;
-    cursor: pointer;
-    transition: transform 0.2s, background 0.2s;
+    transition: color 0.3s, transform 0.3s;
 }
 
-.knopf:hover {
-    background: var(--braun);
+.nav-links a:hover {
+    color: #ffd19b;
     transform: translateY(-3px);
 }
 
-.mini-hinweis {
-    color: var(--gruen);
-    font-size: 13px;
-    font-style: italic;
+.hero-content {
+    width: min(750px, 90%);
+    margin: auto 0;
+    padding: 100px 8%;
+    animation: fadeUp 1.2s ease both;
 }
 
-.hero-bild {
-    position: relative;
+.eyebrow {
+    color: var(--orange);
+    font-size: 0.78rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
 }
 
-.hero-bild img {
-    display: block;
-    width: 100%;
-    height: 410px;
-    object-fit: cover;
-    border: 8px solid white;
-    border-radius: 45% 45% 18px 18px;
-    box-shadow: 0 15px 35px #34472b30;
+.hero .eyebrow {
+    color: #ffd19b;
 }
 
-.bild-sticker {
-    position: absolute;
-    right: -12px;
-    bottom: 25px;
-    padding: 15px;
-    background: #fff4cb;
-    border-radius: 50%;
-    font-weight: 900;
-    transform: rotate(9deg);
+.hero h1 {
+    font-size: clamp(3.5rem, 9vw, 7.5rem);
+    line-height: 1.1;
+    margin-bottom: 25px;
+    text-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
-.abschnitt {
-    padding: 75px 7%;
+.hero-subtitle {
+    max-width: 550px;
+    font-size: 1.2rem;
+    margin-bottom: 32px;
+}
+
+.main-button,
+.fun-button,
+.secret-button {
+    display: inline-block;
+    border: none;
+    border-radius: 30px;
+    padding: 13px 25px;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.main-button {
+    background: #f0a45d;
+    color: #24382b;
+}
+
+.main-button:hover,
+.fun-button:hover,
+.secret-button:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.scroll-hint {
     text-align: center;
+    padding: 20px;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    animation: pulse 2s infinite;
 }
 
-.abschnitt > h2,
-.herden-banner h2,
-.geheimnis h2 {
-    margin: 10px 0;
-    color: var(--wald);
-    font-size: clamp(30px, 4vw, 43px);
+
+/* =========================
+   ALLGEMEINE ABSCHNITTE
+========================= */
+
+.section {
+    padding: 100px 8%;
 }
 
-.einleitung {
-    margin-bottom: 35px;
+.section-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 55px;
 }
 
-.karten {
+.section-heading h2,
+.habitat-text h2,
+.secret-box h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.2;
+    color: var(--forest);
+    margin-bottom: 18px;
+}
+
+.section-heading > p:last-child {
+    color: #657269;
+}
+
+
+/* =========================
+   STECKBRIEF-KARTEN
+========================= */
+
+.fact-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-    margin-top: 35px;
-    text-align: left;
-}
-
-.karte {
-    padding: 27px;
-    background: var(--creme);
-    border: 1px solid #d9dfcb;
-    border-radius: 18px;
-    box-shadow: 0 7px 18px #273d2510;
-    transition: transform 0.2s;
-}
-
-.karte:hover {
-    transform: translateY(-5px);
-}
-
-.karte h3 {
-    color: var(--wald);
-}
-
-.karte p {
-    line-height: 1.7;
-}
-
-.symbol {
-    font-size: 35px;
-}
-
-.herden-banner {
-    padding: 65px 7%;
-    background: #dfe8d3;
-    text-align: center;
-}
-
-.kuh-reihe {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 35px;
-    margin: 30px 0;
-}
-
-.kuh {
-    border: 3px solid #fffdf5;
-    border-radius: 25px;
-    background: #f7f2e4;
-    font-size: 65px;
-    padding: 20px;
-    cursor: pointer;
-    transition: transform 0.25s;
-}
-
-.kuh:hover {
-    transform: rotate(-7deg) scale(1.1);
-}
-
-#kuh-nachricht {
-    min-height: 30px;
-    color: var(--wald);
-    font-weight: 900;
-}
-
-.funfact {
-    display: flex;
-    align-items: center;
-    gap: 22px;
-    max-width: 800px;
-    margin: 15px auto;
-    padding: 15px 22px;
-    background: var(--creme);
-    border-radius: 14px;
-    text-align: left;
-}
-
-.funfact span {
-    color: var(--gruen);
-    font-family: 'Playfair Display', serif;
-    font-size: 30px;
-    font-weight: 800;
-}
-
-.funfact p {
-    line-height: 1.7;
-}
-
-.geheimnis {
-    padding: 70px 7%;
-    background: #263d2b;
-    color: #f9f3dd;
-}
-
-.geheimnis-inhalt {
-    max-width: 760px;
+    gap: 25px;
+    max-width: 1200px;
     margin: auto;
 }
 
-.geheimnis h2 {
-    color: #f8e8b8;
+.fact-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #e7e8dc;
+    box-shadow: 0 8px 25px rgba(24, 55, 37, 0.05);
+    transition: transform 0.35s, box-shadow 0.35s;
 }
 
-.geheimnis .etikett {
-    color: #d7c184;
+.fact-card:hover {
+    transform: translateY(-10px) rotate(-1deg);
+    box-shadow: 0 18px 40px rgba(24, 55, 37, 0.13);
 }
 
-.geheimnis li {
-    margin: 13px 0;
-    line-height: 1.7;
+.fact-icon {
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 12px;
 }
 
-.geheimnis ul {
-    padding-left: 20px;
+.fact-card h3 {
+    color: var(--forest);
+    margin-bottom: 8px;
 }
+
+
+/* =========================
+   LEBENSRAUM
+========================= */
+
+.habitat-section {
+    background: var(--light-green);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.habitat-image img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: 15px 15px 0 #c5d4b7;
+    transition: transform 0.4s;
+}
+
+.habitat-image img:hover {
+    transform: scale(1.025);
+}
+
+.habitat-text h2 {
+    margin-bottom: 25px;
+}
+
+.habitat-text > p:not(.eyebrow) {
+    margin-bottom: 18px;
+}
+
+.fun-button {
+    background: var(--forest);
+    color: white;
+    margin-top: 10px;
+}
+
+.random-fact {
+    margin-top: 20px;
+    padding: 15px;
+    border-left: 4px solid var(--orange);
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 0 12px 12px 0;
+    min-height: 55px;
+}
+
+
+/* =========================
+   BILDERGALERIE
+========================= */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1250px;
+    margin: auto;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    background: var(--forest);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    transition: transform 0.6s, filter 0.6s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.12);
+    filter: brightness(0.7);
+}
+
+.gallery-item figcaption {
+    padding: 17px;
+    background: white;
+    color: var(--forest);
+    font-weight: bold;
+}
+
+.gallery-note {
+    text-align: center;
+    color: #7a827b;
+    font-size: 0.8rem;
+    margin-top: 25px;
+}
+
+
+/* =========================
+   EASTER-EGG-BEREICH
+========================= */
+
+.secret-section {
+    padding: 80px 8%;
+    background:
+        radial-gradient(
+            circle at top right,
+            #4b7951,
+            transparent 40%
+        ),
+        var(--deep-forest);
+    color: white;
+}
+
+.secret-box {
+    max-width: 750px;
+    text-align: center;
+    margin: auto;
+    padding: 50px 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.secret-box h2 {
+    color: white;
+}
+
+.secret-box > p:not(.eyebrow) {
+    margin-bottom: 25px;
+}
+
+.secret-button {
+    background: #f0a45d;
+    color: var(--deep-forest);
+}
+
+.secret-message {
+    margin-top: 25px;
+    font-size: 1.15rem;
+    font-weight: bold;
+    min-height: 30px;
+}
+
+
+/* =========================
+   ARTENSCHUTZ
+========================= */
+
+.protection-section {
+    background: #f5ead8;
+}
+
+.protection-content {
+    max-width: 750px;
+    margin: auto;
+    text-align: center;
+}
+
+.protection-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.protection-content p {
+    margin-bottom: 20px;
+}
+
+.protection-content .main-button {
+    margin-top: 15px;
+}
+
+
+/* =========================
+   FUSSZEILE
+========================= */
 
 footer {
-    padding: 35px 6%;
-    background: #172a1c;
-    color: white;
     text-align: center;
+    padding: 45px 20px;
+    background: var(--deep-forest);
+    color: #e5eddf;
 }
 
-#nacht-knopf {
-    padding: 10px 16px;
-    border: 1px solid var(--gold);
-    border-radius: 10px;
-    background: transparent;
-    color: white;
+.footer-panda {
+    display: inline-block;
+    font-size: 3rem;
     cursor: pointer;
+    transition: transform 0.3s;
+    user-select: none;
 }
 
-#meldung {
+.footer-panda:hover {
+    transform: rotate(-12deg) scale(1.2);
+}
+
+.footer-hint {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-top: 12px;
+}
+
+
+/* =========================
+   SCHWEBENDE BLÄTTER
+========================= */
+
+.floating-leaves {
     position: fixed;
-    z-index: 10000;
-    left: 50%;
-    bottom: 25px;
-    width: max-content;
-    max-width: 90%;
-    padding: 16px 22px;
-    border: 2px solid var(--gold);
-    border-radius: 15px;
-    background: #203b29;
-    color: white;
-    font-weight: 900;
-    text-align: center;
-    box-shadow: 0 8px 30px #0003;
-    opacity: 0;
-    transform: translate(-50%, 30px);
+    top: 15%;
+    right: 2%;
+    z-index: 10;
     pointer-events: none;
-    transition: 0.3s;
+    font-size: 1.5rem;
+    opacity: 0.65;
+    animation: leafFloat 7s ease-in-out infinite;
 }
 
-#meldung.zeigen {
-    opacity: 1;
-    transform: translate(-50%, 0);
-}
 
-#magie {
+/* =========================
+   PANDA-REGEN
+========================= */
+
+.panda-rain {
     position: fixed;
     inset: 0;
-    z-index: 9998;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-    background: #152d21eF;
-    color: white;
-    text-align: center;
+    z-index: 100;
     pointer-events: none;
+    overflow: hidden;
 }
 
-#magie.aktiv {
-    display: flex;
-    animation: magie-ein 0.4s ease;
+.falling-panda {
+    position: absolute;
+    top: -60px;
+    animation: fallDown 4s linear forwards;
 }
 
-#magie .magie-bild {
-    font-size: clamp(45px, 10vw, 100px);
-    animation: schweben 1s ease-in-out infinite alternate;
+
+/* =========================
+   NACH-OBEN-BUTTON
+========================= */
+
+.back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: var(--orange);
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: 0 5px 15px #0002;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: 0.3s;
+    z-index: 20;
 }
 
-#magie h2 {
-    color: #ffe6a0;
-    font-size: clamp(28px, 5vw, 50px);
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
-body.nacht {
-    --hell: #14251a;
-    --creme: #20372a;
-    --wald: #dceacb;
-    --gruen: #b7d79d;
-    --braun: #f0d2a4;
-    color: #f4f1e7;
+
+/* =========================
+   ANIMATIONEN
+========================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-body.nacht .hero {
-    background: linear-gradient(130deg, #263e30, #344435);
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
-body.nacht .herden-banner {
-    background: #2a402f;
+@keyframes leafFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(25px) rotate(8deg);
+    }
 }
 
-body.nacht .karte,
-body.nacht .funfact {
-    color: #f4f1e7;
-    border-color: #425743;
+@keyframes fallDown {
+    from {
+        transform: translateY(-60px) rotate(0deg);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.4;
+    }
 }
 
-@keyframes magie-ein {
-    from { opacity: 0; transform: scale(0.85); }
-    to { opacity: 1; transform: scale(1); }
-}
 
-@keyframes schweben {
-    from { transform: translateY(-8px) rotate(-5deg); }
-    to { transform: translateY(8px) rotate(5deg); }
-}
+/* =========================
+   HANDY
+========================= */
 
-@media (max-width: 800px) {
-    .kopf {
-        flex-direction: column;
+@media (max-width: 850px) {
+
+    .navigation {
+        justify-content: center;
         text-align: center;
     }
 
-    nav {
+    .nav-links {
         justify-content: center;
-        gap: 12px 18px;
+        gap: 12px 20px;
     }
 
-    .hero {
-        grid-template-columns: 1fr;
-        padding: 45px 6%;
-    }
-
-    .hero-bild img {
-        height: 300px;
-    }
-
-    .karten {
+    .fact-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .habitat-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery-item:last-child {
+        grid-column: 1 / -1;
     }
 }
 
 @media (max-width: 520px) {
-    .karten {
+
+    .hero-content {
+        padding: 80px 7%;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section {
+        padding: 65px 6%;
+    }
+
+    .fact-grid,
+    .gallery {
         grid-template-columns: 1fr;
     }
 
-    .abschnitt {
-        padding: 50px 6%;
+    .gallery-item:last-child {
+        grid-column: auto;
     }
 
-    .kuh {
-        font-size: 50px;
+    .gallery-item img {
+        height: 300px;
+    }
+
+    .habitat-image img {
+        height: 300px;
+    }
+
+    .logo {
+        font-size: 1.15rem;
+    }
+
+    .floating-leaves {
+        display: none;
     }
 }
 
+
+/* Weniger Animation bei entsprechender Systemeinstellung */
+
 @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
         scroll-behavior: auto !important;
         animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
 }
+```
