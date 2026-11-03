@@ -4,236 +4,389 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHAMELEON — The Art of Adaptation</title>
+
+    <title>CHAMELEON | The Art of Adaptation</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="header">
-    <a href="#" class="logo">CHAMELEON<span>.</span></a>
+<div class="cursor-glow"></div>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#species">Arten</a>
-        <a href="#abilities">Fähigkeiten</a>
-        <a href="#about">Über Chamäleons</a>
+<header class="header">
+    <a href="#home" class="brand">
+        <span class="brand-icon">🦎</span>
+        <span>CHAMELEON<span class="brand-dot">.</span></span>
+    </a>
+
+    <nav class="navigation">
+        <a href="#home" class="active">Home</a>
+        <a href="#arten">Arten</a>
+        <a href="#faehigkeiten">Fähigkeiten</a>
+        <a href="#wissen">Wissen</a>
+        <a href="#schutz">Schutz</a>
     </nav>
 
-    <a href="#discover" class="header-button">Discover more ↗</a>
+    <a href="#arten" class="nav-button">
+        Entdecken <span>↗</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Navigation öffnen">
+        ☰
+    </button>
 </header>
+
 
 <main>
 
-<section class="hero" id="home">
-    <div class="hero-image"></div>
-    <div class="hero-overlay"></div>
+    <!-- HERO -->
 
-    <div class="hero-content">
-        <p class="eyebrow">THE WORLD OF CHAMELEONS · EST. NATURE</p>
-        <h1>Masters of<br><em>disguise.</em></h1>
-        <p class="hero-text">
-            Eine faszinierende Welt voller Farben, erstaunlicher Fähigkeiten
-            und perfekt angepasster Überlebenskünstler.
-        </p>
-        <a href="#discover" class="main-button">Die Welt entdecken <span>↗</span></a>
-    </div>
+    <section class="hero" id="home">
 
-    <div class="hero-bottom">
-        <span>01 — 04</span>
-        <span>WILDLIFE / REPTILES</span>
-        <span>SCROLL TO EXPLORE ↓</span>
-    </div>
-</section>
+        <div class="hero-background"></div>
+        <div class="hero-shade"></div>
 
-<section class="intro section" id="discover">
-    <div class="section-number">01 / INTRODUCTION</div>
+        <div class="hero-content">
 
-    <div class="intro-grid">
-        <div>
-            <p class="small-heading">MORE THAN JUST COLOUR</p>
-            <h2>Eine Welt,<br>die sich <em>verändert.</em></h2>
-        </div>
+            <div class="eyebrow">
+                <span></span>
+                THE ART OF ADAPTATION
+                <span></span>
+            </div>
 
-        <div class="intro-description">
-            <p>
-                Chamäleons gehören zu den faszinierendsten Reptilien der Erde.
-                Ihre unabhängig beweglichen Augen, ihre blitzschnelle Zunge
-                und ihre besonderen Farbwechsel machen sie einzigartig.
+            <h1>Chame<span>leon</span></h1>
+
+            <h2 class="hero-subtitle">
+                Kleine Kreatur.
+                <em>Eine grosse Vielfalt.</em>
+            </h2>
+
+            <p class="hero-description">
+                Entdecke die faszinierende Welt der Chamäleons –
+                Meister der Tarnung, der Farben und der Anpassung.
             </p>
-            <p>
-                Sie leben vor allem in Afrika, Madagaskar und Teilen Asiens.
-                Jede Art besitzt ihre eigenen Besonderheiten.
-            </p>
+
+            <a href="#wissen" class="hero-button">
+                Mehr erfahren <span>↓</span>
+            </a>
+
         </div>
-    </div>
-</section>
 
-<section class="species section" id="species">
-    <div class="section-number">02 / SPECIES</div>
-
-    <div class="section-heading">
-        <div>
-            <p class="small-heading">A DIVERSE FAMILY</p>
-            <h2>Meet the <em>species.</em></h2>
+        <div class="hero-side">
+            <div class="side-line"></div>
+            <span>WILDLIFE · REPTILES · NATURE</span>
         </div>
-        <p>Einige der beeindruckendsten Vertreter<br>dieser aussergewöhnlichen Tierfamilie.</p>
-    </div>
 
-    <div class="species-grid">
+        <div class="hero-bottom">
 
-        <article class="species-card">
-            <div class="species-image">
-                <img src="https://images.unsplash.com/photo-1590691566903-1b8b8e9e6d4b?auto=format&fit=crop&w=1000&q=85" alt="Chamäleon">
-                <span class="card-number">01</span>
+            <div class="scroll-indicator">
+                <span class="mouse-icon">⌖</span>
+                <span>Scrollen</span>
             </div>
-            <div class="species-info">
-                <p class="latin">FURCIFER PARDALIS</p>
-                <h3>Pantherchamäleon</h3>
-                <p>Bekannt für seine auffälligen Farben und die grosse Vielfalt an Farbmustern.</p>
-                <button onclick="showInfo('panther')">Explore species ↗</button>
+
+            <div class="hero-facts">
+
+                <div class="hero-fact">
+                    <span class="fact-icon">◉</span>
+                    <span>Beeindruckender<br>Farbwechsel</span>
+                </div>
+
+                <div class="hero-fact">
+                    <span class="fact-icon">◎</span>
+                    <span>Unabhängige<br>Augenbewegung</span>
+                </div>
+
+                <div class="hero-fact">
+                    <span class="fact-icon">ϟ</span>
+                    <span>Blitzschnelle<br>Zunge</span>
+                </div>
+
+                <div class="hero-fact">
+                    <span class="fact-icon">❧</span>
+                    <span>Perfekte<br>Anpassung</span>
+                </div>
+
             </div>
-        </article>
 
-        <article class="species-card">
-            <div class="species-image">
-                <img src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?auto=format&fit=crop&w=1000&q=85" alt="Chamäleon in der Natur">
-                <span class="card-number">02</span>
-            </div>
-            <div class="species-info">
-                <p class="latin">CHAMAELEO CALYPTRATUS</p>
-                <h3>Jemenchamäleon</h3>
-                <p>Sein auffälliger Helm auf dem Kopf macht es unverwechselbar.</p>
-                <button onclick="showInfo('jemen')">Explore species ↗</button>
-            </div>
-        </article>
-
-        <article class="species-card">
-            <div class="species-image">
-                <img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1000&q=85" alt="Tropischer Lebensraum">
-                <span class="card-number">03</span>
-            </div>
-            <div class="species-info">
-                <p class="latin">TRIOCEROS JACKSONII</p>
-                <h3>Jackson-Chamäleon</h3>
-                <p>Die Männchen besitzen meist drei auffällige Hörner auf dem Kopf.</p>
-                <button onclick="showInfo('jackson')">Explore species ↗</button>
-            </div>
-        </article>
-
-    </div>
-</section>
-
-<section class="quote-section">
-    <div class="quote-image"></div>
-    <div class="quote-content">
-        <p class="small-heading">THE ART OF ADAPTATION</p>
-        <h2>Not everything<br>is as it <em>seems.</em></h2>
-        <p>Die Natur hat ihre eigenen Meister der Verwandlung hervorgebracht.</p>
-    </div>
-</section>
-
-<section class="abilities section" id="abilities">
-    <div class="section-number">03 / SPECIAL ABILITIES</div>
-
-    <p class="small-heading">BUILT DIFFERENT</p>
-    <h2>Designed by <em>nature.</em></h2>
-
-    <div class="ability-grid">
-        <article class="ability">
-            <span>01</span>
-            <div class="ability-icon">◉</div>
-            <h3>360°-Blick?</h3>
-            <p>Die Augen können unabhängig voneinander in unterschiedliche Richtungen schauen.</p>
-        </article>
-
-        <article class="ability">
-            <span>02</span>
-            <div class="ability-icon">↗</div>
-            <h3>Blitzschnelle Zunge</h3>
-            <p>Mit ihrer langen, schnellen Zunge fangen Chamäleons ihre Beute.</p>
-        </article>
-
-        <article class="ability">
-            <span>03</span>
-            <div class="ability-icon">◈</div>
-            <h3>Farbwechsel</h3>
-            <p>Farben helfen bei Kommunikation, Temperaturregulation und Tarnung.</p>
-        </article>
-
-        <article class="ability">
-            <span>04</span>
-            <div class="ability-icon">⌁</div>
-            <h3>Klettertalente</h3>
-            <p>Greiffüsse und ein kräftiger Greifschwanz geben ihnen Halt auf Ästen.</p>
-        </article>
-    </div>
-</section>
-
-<section class="color-lab">
-    <div class="color-text">
-        <p class="small-heading">04 / INTERACTIVE EXPERIENCE</p>
-        <h2>The colour<br><em>laboratory.</em></h2>
-        <p>Entdecke verschiedene Farbstimmungen. Welche gefällt dir am besten?</p>
-    </div>
-
-    <div class="color-display" id="colorDisplay">
-        <span class="color-symbol">✳</span>
-        <p id="colorName">FOREST GREEN</p>
-    </div>
-
-    <div class="color-controls">
-        <button class="color-button active" style="--swatch:#547b45" onclick="setColor('#547b45','FOREST GREEN',this)"></button>
-        <button class="color-button" style="--swatch:#d4a94f" onclick="setColor('#d4a94f','GOLDEN LIGHT',this)"></button>
-        <button class="color-button" style="--swatch:#a65c50" onclick="setColor('#a65c50','EARTH RED',this)"></button>
-        <button class="color-button" style="--swatch:#4c8990" onclick="setColor('#4c8990','OCEAN BLUE',this)"></button>
-        <button class="color-button" style="--swatch:#8b6b9e" onclick="setColor('#8b6b9e','MYSTIC PURPLE',this)"></button>
-    </div>
-</section>
-
-<section class="about section" id="about">
-    <div class="section-number">05 / ABOUT</div>
-    <div class="about-grid">
-        <div>
-            <p class="small-heading">A CLOSER LOOK</p>
-            <h2>Small creatures.<br><em>Big wonders.</em></h2>
         </div>
-        <div>
-            <p>
-                Chamäleons sind keine kleinen Zauberkünstler, sondern hoch
-                spezialisierte Reptilien. Ihre besonderen Körpermerkmale
-                sind das Ergebnis einer langen Evolution.
-            </p>
-            <p>
-                Viele Arten sind durch den Verlust ihres Lebensraums bedroht.
-                Der Schutz ihrer natürlichen Umgebung ist deshalb besonders wichtig.
+
+        <div class="hero-number">01 / 05</div>
+
+    </section>
+
+
+    <!-- ARTEN -->
+
+    <section class="species-section section" id="arten">
+
+        <div class="section-topline">
+            <span>ENTDECKE DIE ARTEN</span>
+            <span>02 — SPECIES</span>
+        </div>
+
+        <div class="section-heading">
+            <div>
+                <p class="small-label">A WORLD OF DIVERSITY</p>
+                <h2>Vielfalt der <em>Chamäleons.</em></h2>
+            </div>
+
+            <p class="heading-description">
+                Von Madagaskar bis Afrika –
+                jede Art ist einzigartig.
             </p>
         </div>
-    </div>
-</section>
+
+        <div class="species-grid">
+
+            <article class="species-card" onclick="openSpecies('panther')">
+                <div class="species-image">
+                    <img src="bilder/pantherchamaeleon.jpg" alt="Pantherchamäleon">
+                    <span class="species-number">01</span>
+                    <span class="image-arrow">↗</span>
+                </div>
+
+                <div class="species-info">
+                    <p class="latin">FURCIFER PARDALIS</p>
+                    <h3>Pantherchamäleon</h3>
+                    <p>Farbenpracht aus Madagaskar</p>
+                </div>
+            </article>
+
+
+            <article class="species-card" onclick="openSpecies('jemen')">
+                <div class="species-image">
+                    <img src="bilder/jemenchamaeleon.jpg" alt="Jemenchamäleon">
+                    <span class="species-number">02</span>
+                    <span class="image-arrow">↗</span>
+                </div>
+
+                <div class="species-info">
+                    <p class="latin">CHAMAELEO CALYPTRATUS</p>
+                    <h3>Jemenchamäleon</h3>
+                    <p>Der Helm unter den Chamäleons</p>
+                </div>
+            </article>
+
+
+            <article class="species-card" onclick="openSpecies('jackson')">
+                <div class="species-image">
+                    <img src="bilder/jacksonchamaeleon.jpg" alt="Jackson-Chamäleon">
+                    <span class="species-number">03</span>
+                    <span class="image-arrow">↗</span>
+                </div>
+
+                <div class="species-info">
+                    <p class="latin">TRIOCEROS JACKSONII</p>
+                    <h3>Jackson-Chamäleon</h3>
+                    <p>Mit drei auffälligen Hörnern</p>
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- FÄHIGKEITEN -->
+
+    <section class="abilities-section section" id="faehigkeiten">
+
+        <div class="section-topline">
+            <span>MEISTERWERKE DER NATUR</span>
+            <span>03 — ABILITIES</span>
+        </div>
+
+        <div class="section-heading">
+            <div>
+                <p class="small-label">BUILT DIFFERENT</p>
+                <h2>Aussergewöhnlich<br><em>angepasst.</em></h2>
+            </div>
+
+            <p class="heading-description">
+                Vier faszinierende Fähigkeiten,
+                die Chamäleons so besonders machen.
+            </p>
+        </div>
+
+        <div class="ability-grid">
+
+            <article class="ability-card">
+                <span class="ability-number">01</span>
+                <div class="ability-icon">◎</div>
+                <h3>Unabhängige Augen</h3>
+                <p>
+                    Chamäleons können ihre Augen unabhängig voneinander
+                    bewegen und so verschiedene Richtungen beobachten.
+                </p>
+                <span class="ability-line"></span>
+            </article>
+
+            <article class="ability-card">
+                <span class="ability-number">02</span>
+                <div class="ability-icon">ϟ</div>
+                <h3>Blitzschnelle Zunge</h3>
+                <p>
+                    Ihre lange Schleuderzunge kann blitzschnell
+                    hervorschnellen und Beutetiere fangen.
+                </p>
+                <span class="ability-line"></span>
+            </article>
+
+            <article class="ability-card">
+                <span class="ability-number">03</span>
+                <div class="ability-icon">◈</div>
+                <h3>Farbveränderung</h3>
+                <p>
+                    Der Farbwechsel dient nicht nur der Tarnung,
+                    sondern auch der Kommunikation und Temperaturregulation.
+                </p>
+                <span class="ability-line"></span>
+            </article>
+
+            <article class="ability-card">
+                <span class="ability-number">04</span>
+                <div class="ability-icon">⌁</div>
+                <h3>Greiffüsse</h3>
+                <p>
+                    Spezielle Füsse und ein Greifschwanz helfen
+                    ihnen, sich sicher auf Ästen festzuhalten.
+                </p>
+                <span class="ability-line"></span>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- COLOR LAB -->
+
+    <section class="color-section section" id="wissen">
+
+        <div class="section-topline">
+            <span>THE SCIENCE OF COLOUR</span>
+            <span>04 — COLOUR LAB</span>
+        </div>
+
+        <div class="color-layout">
+
+            <div class="color-text">
+                <p class="small-label">A SPECTRUM OF LIFE</p>
+
+                <h2>Die Welt<br>der <em>Farben.</em></h2>
+
+                <p>
+                    Chamäleons können ihre Hautfarbe verändern.
+                    Wähle eine Farbe und entdecke die verschiedenen
+                    Farbstimmungen dieses interaktiven Experiments.
+                </p>
+
+                <div class="color-buttons">
+                    <button class="color-choice active" data-color="#5e8d45" data-name="FOREST GREEN" style="--swatch:#5e8d45"></button>
+                    <button class="color-choice" data-color="#d5a53d" data-name="GOLDEN SUN" style="--swatch:#d5a53d"></button>
+                    <button class="color-choice" data-color="#b55c4c" data-name="EARTH RED" style="--swatch:#b55c4c"></button>
+                    <button class="color-choice" data-color="#3c8f9a" data-name="OCEAN BLUE" style="--swatch:#3c8f9a"></button>
+                    <button class="color-choice" data-color="#9270a7" data-name="MYSTIC PURPLE" style="--swatch:#9270a7"></button>
+                </div>
+            </div>
+
+            <div class="color-display" id="colorDisplay">
+                <div class="color-ring"></div>
+                <span class="color-star">✳</span>
+                <p id="colorName">FOREST GREEN</p>
+                <span class="color-caption">EXPLORE THE SPECTRUM</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SCHUTZ -->
+
+    <section class="protection-section section" id="schutz">
+
+        <div class="protection-image"></div>
+
+        <div class="protection-content">
+            <p class="small-label">PROTECT THEIR WORLD</p>
+
+            <h2>Eine kleine Welt.<br><em>Ein grosser Schutz.</em></h2>
+
+            <p>
+                Viele Chamäleonarten sind durch Lebensraumverlust
+                und andere menschliche Einflüsse bedroht.
+                Der Schutz ihrer natürlichen Lebensräume ist entscheidend.
+            </p>
+
+            <a href="#footer" class="hero-button">
+                Mehr entdecken <span>↗</span>
+            </a>
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer id="footer">
+
+        <div class="footer-main">
+            <a href="#home" class="brand footer-brand">
+                <span class="brand-icon">🦎</span>
+                <span>CHAMELEON<span class="brand-dot">.</span></span>
+            </a>
+
+            <p>THE ART OF ADAPTATION</p>
+
+            <a href="#home" class="back-top">Zurück nach oben ↑</a>
+        </div>
+
+        <div class="footer-bottom">
+            <span>WILDLIFE · NATURE · DISCOVERY</span>
+            <span>© 2026 CHAMELEON PROJECT</span>
+        </div>
+
+    </footer>
 
 </main>
 
-<footer>
-    <a href="#" class="logo">CHAMELEON<span>.</span></a>
-    <p>THE ART OF ADAPTATION</p>
-    <p>© 2026 — A WORLD OF WILDLIFE</p>
-</footer>
 
-<div class="popup" id="popup">
-    <div class="popup-box">
-        <button class="close-popup" onclick="closeInfo()">×</button>
-        <p class="small-heading">SPECIES INFORMATION</p>
-        <h2 id="popupTitle">Chamäleon</h2>
-        <p id="popupText"></p>
+<!-- POPUP -->
+
+<div class="modal" id="speciesModal">
+    <div class="modal-content">
+
+        <button class="modal-close" id="modalClose">×</button>
+
+        <p class="small-label">SPECIES PROFILE</p>
+
+        <h2 id="modalTitle">Chamäleon</h2>
+
+        <p id="modalDescription"></p>
+
+        <div class="modal-detail" id="modalDetail"></div>
+
     </div>
 </div>
 
-<button class="top-button" id="topButton" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- GEHEIMNIS -->
+
+<div class="secret-message" id="secretMessage">
+    <span>🦎</span>
+    <p>Du hast ein Geheimnis entdeckt!</p>
+    <small>Welcome to the hidden jungle.</small>
+</div>
+
 
 <script src="script.js"></script>
+
 </body>
 </html>
