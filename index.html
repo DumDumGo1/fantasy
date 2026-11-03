@@ -1,285 +1,179 @@
-```html
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Red Panda World 🐾</title>
-
+    <title>CHAMELEON | Masters of Disguise</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 
 <body>
 
-    <div class="floating-leaves" aria-hidden="true">
-        🍃　🌿　🍂　🍃　🌱
-    </div>
+<div id="particles"></div>
 
-    <header class="hero" id="home">
+<header>
+    <a class="logo" href="#">🦎 CHAMELEON</a>
 
-        <nav class="navigation">
-            <a href="#home" class="logo">🦊 Red Panda World</a>
+    <nav>
+        <a href="#start">Home</a>
+        <a href="#arten">Arten</a>
+        <a href="#wissen">Wissen</a>
+        <a href="#geheimnis">Geheimnisse</a>
+    </nav>
 
-            <div class="nav-links">
-                <a href="#steckbrief">Steckbrief</a>
-                <a href="#lebensraum">Lebensraum</a>
-                <a href="#galerie">Galerie</a>
-                <a href="#schutz">Artenschutz</a>
-            </div>
-        </nav>
+    <button id="themeButton">🌙</button>
+</header>
 
-        <div class="hero-content">
-            <p class="eyebrow">WELCOME TO THE WILD 🌿</p>
+<section class="hero" id="start">
+    <div class="hero-content">
+        <p class="eyebrow">THE ART OF DISGUISE</p>
 
-            <h1>Rote Pandas</h1>
+        <h1>MASTER OF<br><span>COLORS.</span></h1>
 
-            <p class="hero-subtitle">
-                Klein, flauschig und voller Geheimnisse.
-                Willkommen in der faszinierenden Welt der Roten Pandas!
-            </p>
-
-            <a href="#steckbrief" class="main-button">
-                Entdecke ihre Welt ↓
-            </a>
-        </div>
-
-        <div class="scroll-hint">SCROLL TO EXPLORE ↓</div>
-
-    </header>
-
-
-    <main>
-
-        <!-- STECKBRIEF -->
-
-        <section class="section" id="steckbrief">
-
-            <div class="section-heading">
-                <p class="eyebrow">MEET THE RED PANDA</p>
-                <h2>Der kleine Waldakrobat 🐾</h2>
-                <p>Wie gut kennst du diese faszinierenden Tiere?</p>
-            </div>
-
-            <div class="fact-grid">
-
-                <article class="fact-card">
-                    <span class="fact-icon">🔬</span>
-                    <h3>Wissenschaftlicher Name</h3>
-                    <p><i>Ailurus fulgens</i></p>
-                </article>
-
-                <article class="fact-card">
-                    <span class="fact-icon">📏</span>
-                    <h3>Körperlänge</h3>
-                    <p>Etwa 50–65 cm, ohne Schwanz.</p>
-                </article>
-
-                <article class="fact-card">
-                    <span class="fact-icon">⚖️</span>
-                    <h3>Gewicht</h3>
-                    <p>Ungefähr 3–6 kg.</p>
-                </article>
-
-                <article class="fact-card">
-                    <span class="fact-icon">🎂</span>
-                    <h3>Lebenserwartung</h3>
-                    <p>In menschlicher Obhut oft bis etwa 15 Jahre.</p>
-                </article>
-
-                <article class="fact-card">
-                    <span class="fact-icon">🎋</span>
-                    <h3>Lieblingsessen</h3>
-                    <p>Bambus, aber auch Früchte und andere Pflanzenteile.</p>
-                </article>
-
-                <article class="fact-card">
-                    <span class="fact-icon">🌏</span>
-                    <h3>Herkunft</h3>
-                    <p>Die Bergwälder des Himalaya und angrenzende Regionen Asiens.</p>
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- LEBENSRAUM -->
-
-        <section class="section habitat-section" id="lebensraum">
-
-            <div class="habitat-image">
-                <img
-                    src="https://images3.alphacoders.com/105/thumb-1920-1055504.jpg"
-                    alt="Roter Panda klettert an einem Baum"
-                    loading="lazy">
-            </div>
-
-            <div class="habitat-text">
-
-                <p class="eyebrow">HOME IN THE MOUNTAINS</p>
-
-                <h2>Ein Leben hoch oben in den Bäumen 🌳</h2>
-
-                <p>
-                    Rote Pandas leben in kühlen, feuchten Bergwäldern
-                    mit vielen Bäumen und Bambus. Sie sind ausgezeichnete
-                    Kletterer und verbringen viel Zeit in den Bäumen.
-                </p>
-
-                <p>
-                    Ihr buschiger Schwanz hilft ihnen beim Balancieren.
-                    Bei kaltem Wetter können sie ihn ausserdem wie eine
-                    warme Decke um ihren Körper legen.
-                </p>
-
-                <button class="fun-button" id="factButton">
-                    ✨ Überrasch mich!
-                </button>
-
-                <p id="randomFact" class="random-fact" aria-live="polite">
-                    Hier wartet eine Überraschung auf dich ...
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- BILDERGALERIE -->
-
-        <section class="section" id="galerie">
-
-            <div class="section-heading">
-                <p class="eyebrow">LITTLE FOREST STARS</p>
-                <h2>Die flauschige Galerie 📸</h2>
-                <p>Ein paar besondere Momente aus dem Leben der Roten Pandas.</p>
-            </div>
-
-            <div class="gallery">
-
-                <figure class="gallery-item">
-                    <img
-                        src="https://himalayangatewaytrek.com/wp-content/uploads/2025/12/red-panda.jpeg"
-                        alt="Roter Panda auf einem moosigen Ast"
-                        loading="lazy">
-                    <figcaption>🌿 Der neugierige Entdecker</figcaption>
-                </figure>
-
-                <figure class="gallery-item">
-                    <img
-                        src="https://www.pbs.org/wnet/nature/files/2023/02/pexels-flickr-146069-scaled-e1677618315322-2048x1152.jpg"
-                        alt="Roter Panda schläft auf einem Ast"
-                        loading="lazy">
-                    <figcaption>💤 Zeit für ein Nickerchen</figcaption>
-                </figure>
-
-                <figure class="gallery-item">
-                    <img
-                        src="https://res.cloudinary.com/roundglass/image/upload/v1534948654/roundglass/sustain/Cover_Featured_redpanda_iyh4id.jpg"
-                        alt="Roter Panda im grünen Wald"
-                        loading="lazy">
-                    <figcaption>🍃 Im grünen Dschungel</figcaption>
-                </figure>
-
-            </div>
-
-            <p class="gallery-note">
-                Hinweis: Die Fotos werden von externen Webseiten geladen.
-            </p>
-
-        </section>
-
-
-        <!-- EASTER EGGS -->
-
-        <section class="secret-section">
-
-            <div class="secret-box">
-
-                <p class="eyebrow">PSSST ... 🤫</p>
-
-                <h2>Ein Geheimnis wartet auf dich!</h2>
-
-                <p>
-                    Manche Geheimnisse verstecken sich direkt vor deiner Nase.
-                    Bist du bereit, sie zu entdecken?
-                </p>
-
-                <button class="secret-button" id="secretButton">
-                    🐾 Geheime Überraschung
-                </button>
-
-                <p id="secretMessage" class="secret-message" aria-live="polite"></p>
-
-            </div>
-
-        </section>
-
-
-        <!-- ARTENSCHUTZ -->
-
-        <section class="section protection-section" id="schutz">
-
-            <div class="section-heading">
-                <p class="eyebrow">PROTECT OUR PLANET</p>
-                <h2>Helfen wir den Roten Pandas! 🌍</h2>
-            </div>
-
-            <div class="protection-content">
-
-                <div class="protection-icon">🌱</div>
-
-                <p>
-                    Rote Pandas sind gefährdet. Der Verlust ihres Lebensraums,
-                    die Zerstörung der Wälder und andere menschliche Einflüsse
-                    bedrohen ihr Überleben.
-                </p>
-
-                <p>
-                    Geschützte Wälder, verantwortungsvoller Umgang mit der
-                    Natur und Artenschutzprojekte helfen, ihre Zukunft zu sichern.
-                </p>
-
-                <a
-                    class="main-button"
-                    href="https://redpandanetwork.org/"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Mehr über den Artenschutz erfahren ↗
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <footer>
-
-        <div class="footer-panda" id="magicPanda" title="Klick mich!">
-            🐼
-        </div>
-
-        <p>Made with 🍃 and lots of panda love.</p>
-
-        <p>Red Panda World © 2026</p>
-
-        <p class="footer-hint">
-            Pssst ... probiere einmal, den Panda unten anzuklicken! 👀
+        <p>
+            Meister der Tarnung. Spezialisten der Farben.
+            Entdecke die faszinierende Welt der Chamäleons.
         </p>
 
-    </footer>
+        <a href="#arten" class="main-button">ENTDECKEN ↓</a>
+    </div>
 
+    <div class="hero-lizard" onclick="changeColor()">🦎</div>
 
-    <div id="pandaRain" class="panda-rain" aria-hidden="true"></div>
+    <div class="hero-label">CLICK THE CHAMELEON</div>
+    <div class="hero-decoration">✧</div>
+</section>
 
-    <button id="backToTop" class="back-to-top" aria-label="Nach oben">
-        ↑
-    </button>
+<section class="intro">
+    <p class="eyebrow">WELCOME TO THE JUNGLE</p>
+    <h2>Eine Welt voller <span>Farben.</span></h2>
+    <p>
+        Sie sehen aus wie kleine Drachen, bewegen ihre Augen unabhängig
+        voneinander und besitzen eine blitzschnelle Zunge.
+        Chamäleons sind wahre Meister der Natur.
+    </p>
+</section>
 
+<section class="species" id="arten">
+    <div class="section-title">
+        <p class="eyebrow">THE SPECIES</p>
+        <h2>Die Chamäleon-Welt</h2>
+    </div>
+
+    <div class="species-grid">
+
+        <article class="species-card">
+            <img src="https://images.unsplash.com/photo-1590691566903-1b8b8e9e6d4b?w=900"
+                 alt="Pantherchamäleon">
+            <div class="card-info">
+                <span>01 / MADAGASKAR</span>
+                <h3>Pantherchamäleon</h3>
+                <p>Bekannt für seine beeindruckenden Farbvariationen.</p>
+                <button onclick="openAnimal('panther')">MEHR ENTDECKEN ↗</button>
+            </div>
+        </article>
+
+        <article class="species-card">
+            <img src="https://images.unsplash.com/photo-1511497584788-876760111969?w=900"
+                 alt="Chamäleon im grünen Wald">
+            <div class="card-info">
+                <span>02 / AFRIKA</span>
+                <h3>Jemenchamäleon</h3>
+                <p>Mit einem auffälligen Helm auf dem Kopf.</p>
+                <button onclick="openAnimal('veiled')">MEHR ENTDECKEN ↗</button>
+            </div>
+        </article>
+
+        <article class="species-card">
+            <img src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?w=900"
+                 alt="Grünes Chamäleon">
+            <div class="card-info">
+                <span>03 / OSTAFRIKA</span>
+                <h3>Jackson-Chamäleon</h3>
+                <p>Die Männchen besitzen auffällige Hörner.</p>
+                <button onclick="openAnimal('jackson')">MEHR ENTDECKEN ↗</button>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<section class="abilities" id="wissen">
+    <p class="eyebrow">SUPERPOWERS</p>
+    <h2>Unglaubliche Fähigkeiten</h2>
+
+    <div class="ability-grid">
+        <div class="ability">
+            <span>👀</span>
+            <h3>360°-Blick?</h3>
+            <p>Die Augen können unabhängig voneinander in verschiedene Richtungen schauen.</p>
+        </div>
+
+        <div class="ability">
+            <span>🎯</span>
+            <h3>Turbo-Zunge</h3>
+            <p>Die lange Schleuderzunge kann blitzschnell Insekten fangen.</p>
+        </div>
+
+        <div class="ability">
+            <span>🎨</span>
+            <h3>Farbwechsel</h3>
+            <p>Hautzellen helfen dabei, Farben und Muster zu verändern.</p>
+        </div>
+
+        <div class="ability">
+            <span>🌿</span>
+            <h3>Klettermeister</h3>
+            <p>Greiffüsse und ein Greifschwanz helfen beim Festhalten an Ästen.</p>
+        </div>
+    </div>
+</section>
+
+<section class="color-lab">
+    <p class="eyebrow">THE COLOR LAB</p>
+    <h2>Verändere die Farbe!</h2>
+    <p>Klicke auf eine Farbe und beobachte das Chamäleon.</p>
+
+    <div id="lab-lizard" onclick="randomColor()">🦎</div>
+
+    <div class="color-buttons">
+        <button style="--c:#61d96b" onclick="setColor('#61d96b')"></button>
+        <button style="--c:#36c8d9" onclick="setColor('#36c8d9')"></button>
+        <button style="--c:#ff9d45" onclick="setColor('#ff9d45')"></button>
+        <button style="--c:#d66bdb" onclick="setColor('#d66bdb')"></button>
+        <button style="--c:#f0dc55" onclick="setColor('#f0dc55')"></button>
+    </div>
+
+    <p id="color-message">Wähle deine Lieblingsfarbe!</p>
+</section>
+
+<section class="secret" id="geheimnis">
+    <div class="secret-icon">🔍</div>
+    <p class="eyebrow">TOP SECRET</p>
+    <h2>Du hast etwas entdeckt ...</h2>
+    <p>Aber nicht jeder findet heraus, was sich hier versteckt.</p>
+
+    <button onclick="revealSecret()">GEHEIMNIS ENTHÜLLEN ✨</button>
+
+    <div id="secret-text"></div>
+</section>
+
+<footer>
+    <h2>🦎 CHAMELEON</h2>
+    <p>THE ART OF DISGUISE</p>
+    <small>EXPLORE THE UNSEEN · 2026</small>
+</footer>
+
+<div id="popup">
+    <div class="popup-content">
+        <button class="close" onclick="closePopup()">✕</button>
+        <div id="popup-text"></div>
+    </div>
+</div>
+
+<button id="top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script src="script.js"></script>
 </body>
 </html>
-```

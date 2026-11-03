@@ -1,202 +1,149 @@
-```javascript
-// ====================================
-// 1. ZUFÄLLIGE PANDA-FAKTEN
-// ====================================
 
-const facts = [
-    "🐾 Rote Pandas benutzen ihren buschigen Schwanz zum Balancieren und Wärmen.",
-    "🌙 Sie sind vor allem in der Dämmerung und nachts aktiv.",
-    "🎋 Bambus ist ein wichtiger Bestandteil ihrer Nahrung.",
-    "🌳 Rote Pandas sind ausgezeichnete Kletterer.",
-    "❄️ Ihr dichtes Fell hilft ihnen, in kühlen Bergwäldern zu leben.",
-    "🔬 Ihr wissenschaftlicher Name lautet Ailurus fulgens.",
-    "🦊 Trotz ihres Aussehens sind Rote Pandas keine Füchse.",
-    "🌏 Sie leben in Teilen des Himalaya und angrenzenden Gebieten Asiens."
+// CHAMÄLEON-FARBEN
+const colors = [
+    "#61d96b",
+    "#36c8d9",
+    "#ff9d45",
+    "#d66bdb",
+    "#f0dc55",
+    "#e85d75"
 ];
 
-const factButton = document.getElementById("factButton");
-const randomFact = document.getElementById("randomFact");
+let colorIndex = 0;
 
-factButton.addEventListener("click", function () {
+function changeColor() {
+    colorIndex = (colorIndex + 1) % colors.length;
 
-    const randomIndex = Math.floor(Math.random() * facts.length);
+    const lizard = document.querySelector(".hero-lizard");
+    lizard.style.filter = `drop-shadow(0 0 55px ${colors[colorIndex]})`;
+    lizard.style.transform = "translateY(-50%) scale(1.2)";
 
-    randomFact.textContent = facts[randomIndex];
+    setTimeout(() => {
+        lizard.style.transform = "translateY(-50%) scale(1)";
+    }, 350);
+}
 
-    randomFact.animate(
-        [
-            { opacity: 0, transform: "translateY(8px)" },
-            { opacity: 1, transform: "translateY(0)" }
-        ],
-        {
-            duration: 400,
-            easing: "ease-out"
-        }
-    );
+// FARB-LABOR
+function setColor(color) {
+    const lizard = document.getElementById("lab-lizard");
+    lizard.style.filter = `drop-shadow(0 0 35px ${color})`;
+    lizard.style.transform = "scale(1.2)";
 
-});
+    document.getElementById("color-message").textContent =
+        "✨ Eine neue Farbe wurde entdeckt!";
 
+    setTimeout(() => {
+        lizard.style.transform = "scale(1)";
+    }, 400);
+}
 
-// ====================================
-// 2. GEHEIME ÜBERRASCHUNG
-// ====================================
+function randomColor() {
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    setColor(color);
+}
 
-const secretButton = document.getElementById("secretButton");
-const secretMessage = document.getElementById("secretMessage");
+// ARTEN-POPUPS
+const animalInfo = {
+    panther: "🌈 Das Pantherchamäleon (Furcifer pardalis) lebt auf Madagaskar. Es ist für seine beeindruckenden Farbvariationen bekannt.",
+    veiled: "👑 Das Jemenchamäleon (Chamaeleo calyptratus) besitzt einen hohen Helm auf dem Kopf. Es stammt von der Arabischen Halbinsel.",
+    jackson: "🦖 Das Jackson-Chamäleon (Trioceros jacksonii) ist für die drei Hörner bekannt, die besonders bei Männchen auffallen."
+};
 
+function openAnimal(type) {
+    document.getElementById("popup-text").textContent = animalInfo[type];
+    document.getElementById("popup").classList.add("active");
+}
+
+function closePopup() {
+    document.getElementById("popup").classList.remove("active");
+}
+
+// GEHEIMNIS
 let secretClicks = 0;
 
-secretButton.addEventListener("click", function () {
-
+function revealSecret() {
     secretClicks++;
 
-    if (secretClicks === 1) {
+    const messages = [
+        "🦎 Ein Chamäleon kann seine Augen unabhängig voneinander bewegen!",
+        "👀 Du bist auf dem richtigen Weg ...",
+        "🌿 Irgendwo im Dschungel versteckt sich ein geheimes Chamäleon.",
+        "✨ Noch ein Klick bis zum geheimen Level!"
+    ];
 
-        secretMessage.textContent =
-            "🌿 Pssst ... irgendwo auf dieser Website wartet noch ein Geheimnis!";
-
-    } else if (secretClicks === 2) {
-
-        secretMessage.textContent =
-            "🐾 Du bist auf einer geheimen Panda-Mission!";
-
+    if (secretClicks >= 5) {
+        document.getElementById("secret-text").textContent =
+            "🏆 CHAMELEON MASTER! Du hast das geheime Level freigeschaltet!";
+        document.body.style.background =
+            "linear-gradient(120deg, #092a24, #321b40)";
     } else {
-
-        secretMessage.textContent =
-            "🎉 PANDA-MODUS AKTIVIERT! Du bist offiziell ein Wald-Entdecker!";
-
-        document.body.classList.toggle("panda-mode");
-
-        secretClicks = 0;
+        document.getElementById("secret-text").textContent =
+            messages[secretClicks - 1];
     }
+}
 
+// HELL / DUNKEL
+document.getElementById("themeButton").addEventListener("click", function() {
+    document.body.classList.toggle("light");
+    this.textContent = document.body.classList.contains("light")
+        ? "☀️"
+        : "🌙";
 });
 
+// FUNKELN BEI MAUSBEWEGUNG
+document.addEventListener("mousemove", function(event) {
+    if (Math.random() > 0.93) {
+        const particle = document.createElement("span");
 
-// ====================================
-// 3. GEHEIMER PANDA-REGEN
-// ====================================
+        particle.textContent = "✦";
+        particle.style.position = "fixed";
+        particle.style.left = event.clientX + "px";
+        particle.style.top = event.clientY + "px";
+        particle.style.color = "#8bff9a";
+        particle.style.pointerEvents = "none";
+        particle.style.zIndex = "99";
+        particle.style.animation = "particleFade 1s forwards";
 
-const magicPanda = document.getElementById("magicPanda");
-const pandaRain = document.getElementById("pandaRain");
+        document.getElementById("particles").appendChild(particle);
 
-let rainActive = false;
-
-magicPanda.addEventListener("click", function () {
-
-    if (rainActive) {
-        return;
+        setTimeout(() => particle.remove(), 1000);
     }
-
-    rainActive = true;
-
-    for (let i = 0; i < 35; i++) {
-
-        const panda = document.createElement("span");
-
-        panda.className = "falling-panda";
-
-        panda.textContent = ["🐼", "🐾", "🍃", "🎋"][
-            Math.floor(Math.random() * 4)
-        ];
-
-        panda.style.left = Math.random() * 100 + "vw";
-
-        panda.style.fontSize = (20 + Math.random() * 25) + "px";
-
-        panda.style.animationDuration = (2.5 + Math.random() * 3) + "s";
-
-        panda.style.animationDelay = (Math.random() * 1.5) + "s";
-
-        pandaRain.appendChild(panda);
-
-        panda.addEventListener("animationend", function () {
-            panda.remove();
-        });
-
-    }
-
-    setTimeout(function () {
-        rainActive = false;
-    }, 6000);
-
 });
 
-
-// ====================================
-// 4. NACH-OBEN-BUTTON
-// ====================================
-
-const backToTop = document.getElementById("backToTop");
-
-window.addEventListener("scroll", function () {
-
-    if (window.scrollY > 400) {
-
-        backToTop.classList.add("visible");
-
-    } else {
-
-        backToTop.classList.remove("visible");
-
-    }
-
+// SCROLL NACH OBEN
+window.addEventListener("scroll", function() {
+    document.getElementById("top").classList.toggle(
+        "visible",
+        window.scrollY > 400
+    );
 });
 
-backToTop.addEventListener("click", function () {
+// GEHEIME TASTENKOMBINATION
+let secretKeys = "";
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+document.addEventListener("keydown", function(event) {
+    secretKeys += event.key.toLowerCase();
+    secretKeys = secretKeys.slice(-8);
 
-});
-
-
-// ====================================
-// 5. EXTRA EASTER EGG: GEHEIME TASTE
-// ====================================
-
-let pandaCode = "";
-
-const secretCode = "panda";
-
-document.addEventListener("keydown", function (event) {
-
-    // Nicht auslösen, während man in ein Eingabefeld schreibt.
-    if (
-        event.target.tagName === "INPUT" ||
-        event.target.tagName === "TEXTAREA"
-    ) {
-        return;
+    if (secretKeys === "chameleon") {
+        document.getElementById("popup-text").textContent =
+            "🌌 GEHEIMNIS ENTDECKT! Du bist ein echter Meister der Tarnung!";
+        document.getElementById("popup").classList.add("active");
     }
 
-    pandaCode += event.key.toLowerCase();
-
-    pandaCode = pandaCode.slice(-secretCode.length);
-
-    if (pandaCode === secretCode) {
-
-        document.body.classList.toggle("panda-mode");
-
-        alert("🐼✨ Du hast das geheime Panda-Code-Easter-Egg gefunden!");
-
-        pandaCode = "";
+    if (event.key === "Escape") {
+        closePopup();
     }
-
 });
 
+// ANIMATION
+const style = document.createElement("style");
 
-// ====================================
-// 6. KLEINE BEGRÜSSUNG
-// ====================================
+style.textContent = `
+@keyframes particleFade {
+    from { opacity: 1; transform: translateY(0) scale(1); }
+    to { opacity: 0; transform: translateY(-35px) scale(0); }
+}
+`;
 
-console.log(
-    "%c🐼 Willkommen in Red Panda World!",
-    "color: #d87536; font-size: 20px; font-weight: bold;"
-);
-
-console.log(
-    "Geheimtipp: Tippe das Wort panda auf deiner Tastatur!"
-);
-```
+document.head.appendChild(style);
